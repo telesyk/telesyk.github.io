@@ -7,7 +7,7 @@
       <div class="flex">
         <h1 class="text-2xl capitalize">{{ config.title }}</h1>
       </div>
-      <ul class="">
+      <ul class="md:flex md:justify-end md:gap-x-4">
         <li v-for="social in socialMedia" :key="social.title">
           <SocialLink :title="social.title" :url="social.link" />
         </li>
