@@ -1,0 +1,48 @@
+{
+  "page":{
+     "header":{
+        "title":"Main Lorem Title",
+        "logotype":{
+           "title":"VectorStock.com/36593829",
+           "className":"h-24 w-24 rounded overflow-hidden bg-white",
+           "link":"/assets/images/36593829.jpg"
+        }
+     },
+     "footer":{
+        "copyright":"Copyrights 2021 lesyk"
+     },
+     "socials":[
+        {
+           "link":"https://www.linkedin.com/in/oles-tkachuk-77a54284/",
+           "title":"LinkedIn"
+        },
+        {
+           "link":"https://github.com/telesyk",
+           "title":"GitHub"
+        },
+        {
+           "link":"mailto:tkachuk.oles@gmail.com",
+           "title":"Email"
+        }
+     ]
+  },
+  "cards":[
+     {
+        "title":"react-todo-tracker-tutorial",
+        "description":"Product Engineer",
+        "linkSite":"https://csb-kcop4.netlify.app/",
+        "linkSource":"https://github.com/telesyk/react-todo-tracker-tutorial",
+        "image":"/assets/images/screen_1.png",
+        "imageAlt":"some alt text",
+        "button":"Message",
+        "className":{
+           "block":"py-6 px-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-2",
+           "image":"block mx-auto max-h-72 rounded-md rounded-bl-none rounded-br-none",
+           "content":"text-center space-y-3 md:text-left flex flex-col",
+           "title":"text-lg text-black font-semibold",
+           "description":"text-gray-500 font-medium",
+           "icon":"ml-1 inline h-5 w-5"
+        }
+     }
+  ]
+}
