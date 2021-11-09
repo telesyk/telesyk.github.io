@@ -1,13 +1,19 @@
 <template>
   <!-- card start -->
   <div
-    class="py-6 px-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-2"
+    class="py-6 px-6 max-w-md bg-white rounded-xl shadow-md space-y-2"
   >
-    <img
-      class="block mx-auto max-h-72 rounded-md rounded-bl-none rounded-br-none"
-      :src="!config.image ? defaultImage : config.image"
-      :alt="config.title"
-    />
+    <a 
+      class="block mx-auto"
+      :href="config.linkSite"
+      :title="`Visite ${config.title}`"
+    >
+      <img
+        class="max-h-72 rounded-md rounded-bl-none rounded-br-none"
+        :src="!config.image ? defaultImage : config.image"
+        :alt="config.title"
+      />
+    </a>
     <div class="text-center space-y-3 md:text-left flex flex-col">
       <p class="text-lg text-black font-semibold">
         <a
