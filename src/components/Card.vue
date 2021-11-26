@@ -1,9 +1,7 @@
 <template>
   <!-- card start -->
-  <div
-    class="py-6 px-6 max-w-md bg-white rounded-xl shadow-md space-y-2"
-  >
-    <a 
+  <div class="py-6 px-6 max-w-md bg-white rounded-xl shadow-md space-y-2">
+    <a
       class="block mx-auto"
       :href="config.linkSite"
       :title="`Visite ${config.title}`"
@@ -14,52 +12,29 @@
         :alt="config.title"
       />
     </a>
-    <div class="text-center space-y-3 md:text-left flex flex-col">
-      <p class="text-lg text-black font-semibold">
+    <div class="text-left grid grid-rows-1 grid-cols-5">
+      <p class="text-black row-span-2">
+        <Icon glyph="code" />
+      </p>
+      <p class="col-span-4 text-lg text-black font-semibold">
         <a
           :href="config.linkSite"
           :title="`Visite ${config.title}`"
           target="_blank"
         >
           <span class="capitalize">{{ config.title }}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="ml-1 inline h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
+          <Icon glyph="external-link" />
         </a>
       </p>
 
-      <p class="text-gray-500 font-medium">
+      <p class="col-span-4 text-gray-500 font-medium">
         <a
           :href="config.linkSource"
           :title="`Source code ${config.title}`"
           target="_blank"
         >
           <span>{{ config.description }}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="ml-1 inline h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-            />
-          </svg>
+          <Icon glyph="code" />
         </a>
       </p>
     </div>
@@ -68,7 +43,10 @@
 </template>
 
 <script>
+import Icon from "./Icon";
+
 export default {
+  components: { Icon },
   props: {
     config: Object,
   },
