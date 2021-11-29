@@ -1,6 +1,6 @@
 <template>
   <span
-    v-html="iconGlyph.template"
+    v-html="iconComponent(strokeWidth)"
     class="icon-svg"
     :class="className"
   ></span>
@@ -11,27 +11,23 @@ import icons from "../icons/index";
 
 export default {
   props: {
-    glyph: String,
+    glyph: {
+      type: String,
+      required: true
+    },
     className: {
       type: String,
       default: "ml-1 inline h-5 w-5",
     },
     strokeWidth: {
-      type: Number,
+      type: [Number, String],
       default: 2,
     },
   },
   data() {
     return {
-      iconGlyph: icons[this.glyph],
+      iconComponent: icons[this.glyph],
     };
-  },
-  methods: {
-    debug() {
-      // console.log('icons', icons);
-      // console.log('glyph', this.glyph);
-      console.log('iconGlyph', this.iconGlyph.template);
-    },
   },
 };
 </script>
@@ -44,6 +40,6 @@ export default {
 .icon-svg svg {
   height: var(--svg-icon-size);
   width: var(--svg-icon-size);
-  stroke-width: 2;
+  transform: translateY(2px);
 }
 </style>

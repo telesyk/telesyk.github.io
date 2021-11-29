@@ -1,5 +1,7 @@
 <template>
-  <div class="card w-full max-w-md py-6 px-6 bg-white rounded-xl shadow-md space-y-2">
+  <div
+    class="card w-full max-w-md py-6 px-6 bg-white rounded-xl shadow-md space-y-2"
+  >
     <a
       v-if="config.imageShow"
       :href="config.linkSite"
@@ -14,8 +16,14 @@
       />
     </a>
     <div class="text-left grid grid-rows-1 grid-cols-5">
-      <p class="icon-tech text-black row-span-2 flex justify-center items-center">
-        <Icon :glyph="config.icon" :className="'inline'" />
+      <p
+        class="icon-tech text-black row-span-2 flex justify-center items-center"
+      >
+        <Icon 
+          :glyph="config.icon" 
+          strokeWidth="1" 
+          :className="'inline'" 
+        />
       </p>
       <p class="col-span-4 text-lg text-black font-semibold">
         <a
@@ -45,24 +53,23 @@
 </template>
 
 <script>
-import Icon from "./Icon";
+  import Icon from "./Icon";
 
-export default {
-  components: { Icon },
-  props: {
-    config: Object,
-  },
-  data() {
-    return {
-      defaultImage: "/assets/images/screen_1.jpg",
-    };
-  },
-};
+  export default {
+    components: { Icon },
+    props: {
+      config: Object,
+    },
+    data() {
+      return {
+        defaultImage: "/assets/images/screen_1.jpg",
+      };
+    },
+  };
 </script>
 
 <style>
-.icon-tech .icon-svg svg {
-  --svg-icon-size: 48px;
-  stroke-width: 1;
-}
+  .icon-tech .icon-svg svg {
+    --svg-icon-size: 48px;
+  }
 </style>
