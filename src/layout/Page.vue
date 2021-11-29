@@ -1,8 +1,8 @@
 <template>
-  <div class="page container mx-auto">
+  <div class="container flex flex-col min-h-screen mx-auto">
     <Header :socialMedia="config.socials" :config="config.header" />
 
-    <main class="main py-5">
+    <main class="main py-5 flex-grow">
       <slot name="main"></slot>
     </main>
 

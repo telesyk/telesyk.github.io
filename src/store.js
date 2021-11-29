@@ -1,7 +1,7 @@
 export default {
   page: {
     header: {
-      title: "resume / portfolio",
+      title: "Oles Tk.",
       logotype: {
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
@@ -32,28 +32,36 @@ export default {
       description: "JS trainnig samples",
       linkSite: "https://vibrant-poincare-3ab32c.netlify.app/",
       linkSource: "https://github.com/telesyk/training-js-cardio",
-      image: "/assets/images/screen_3.jpg"
+      image: "/assets/images/screen_3.jpg",
+      imageShow: false,
+      icon: "javascript",
     },
     {
       title: "react-todo-tracker-tutorial",
       description: "Tutorial React app",
       linkSite: "https://csb-kcop4.netlify.app/",
       linkSource: "https://github.com/telesyk/react-todo-tracker-tutorial",
-      image: "/assets/images/screen_1.jpg"
+      image: "/assets/images/screen_1.jpg",
+      imageShow: false,
+      icon: "reactjs",
     },
     {
       title: "vue-todo-app",
       description: "Tutorial ToDo Vue app",
       linkSite: "https://priceless-noyce-203235.netlify.app/",
       linkSource: "https://github.com/telesyk/vue-todo-app",
-      image: "/assets/images/screen_2.jpg"
+      image: "/assets/images/screen_2.jpg",
+      imageShow: false,
+      icon: "vuejs",
     }
     // {
     //   title: "Test",
     //   description: "Engineer",
     //   linkSite: "https://test",
     //   linkSource: "https://test",
-    //   image: "/assets/images/screen_1.png"
+    //   image: "/assets/images/screen_1.png",
+    // imageShow: false,
+    //   icon: "javascript",
     // }
   ]
 };
