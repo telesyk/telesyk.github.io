@@ -8,8 +8,8 @@ const icons = {
   "external-link": externalLink,
   code: code,
   javascript: javascript,
-  reactjs: reactjs,
-  vuejs: vuejs,
+  "react-js": reactjs,
+  "vue-js": vuejs,
 };
 
 export default icons;

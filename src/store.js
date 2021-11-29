@@ -5,7 +5,6 @@ export default {
       logotype: {
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
-        // link: "/assets/images/36593829.jpg"
       }
     },
     footer: {
@@ -43,7 +42,7 @@ export default {
       linkSource: "https://github.com/telesyk/react-todo-tracker-tutorial",
       image: "/assets/images/screen_1.jpg",
       imageShow: false,
-      icon: "reactjs",
+      icon: "react-js",
     },
     {
       title: "vue-todo-app",
@@ -52,16 +51,7 @@ export default {
       linkSource: "https://github.com/telesyk/vue-todo-app",
       image: "/assets/images/screen_2.jpg",
       imageShow: false,
-      icon: "vuejs",
+      icon: "vue-js",
     }
-    // {
-    //   title: "Test",
-    //   description: "Engineer",
-    //   linkSite: "https://test",
-    //   linkSource: "https://test",
-    //   image: "/assets/images/screen_1.png",
-    // imageShow: false,
-    //   icon: "javascript",
-    // }
   ]
 };
