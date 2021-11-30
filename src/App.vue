@@ -1,15 +1,16 @@
 <template>
-  <Page :config="store.page">
+<!-- In case of pages there should should be some router -->
+  <Page :config="page" :siteName="site.name" :pageName="pages.home">
     <template v-slot:main>
-      <Home :cards="store.cards" />
+      <Home :cards="cards" />
     </template>
   </Page>
 </template>
 
 <script>
-import Page from "./layout/Page";
-import Home from "./page/Home";
-import store from "./store.js";
+import Page from "@/layout/Page";
+import Home from "@/page/Home";
+import store from "@/store.js";
 
 export default {
   name: "App",
@@ -19,7 +20,10 @@ export default {
   },
   data() {
     return {
-      store: { ...store },
+      site: { ...store.site },
+      pages: { ...store.pages },
+      page: { ...store.page },
+      cards: [ ...store.cards ],
     };
   },
 };

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import icons from "../icons/index";
+import icons from "@/icons/index";
 
 export default {
   props: {
