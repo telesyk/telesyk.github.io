@@ -1,10 +1,10 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/telesyk.github.io/docs/'
-    : '/',
+  publicPath: '/',
   outputDir: process.env.NODE_ENV === 'production'
     ? 'docs'
     : 'dist',
+  lintOnSave: process.env.NODE_ENV !== 'production',
+  crossorigin: 'anonymous',
   pages: {
     index: {
       // entry for the page
