@@ -1,0 +1,29 @@
+:root {
+  --color-mustard: #F7D44B;
+  --color-mustard-dum: #CABE91;
+  --color-blue: #143d68;
+  --color-blue-light: #ccdadb;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+#app .header,
+#app .footer {
+  color: var(--color-blue-light);
+}
+
+.card {
+  background-color: var(--color-blue);
+  color: var(--color-mustard);
+}
+
+.card p,
+.card .text-black {
+  color: var(--color-mustard);
+}
+
+.card .text-gray-500 {
+  color: var(--color-mustard-dum);
+}
