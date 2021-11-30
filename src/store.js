@@ -1,11 +1,16 @@
 export default {
+  site: {
+    name: "Oles Tk.",
+  },
+  pages: {
+    home: 'Home page',
+    experience: 'Experience page',
+  },
   page: {
     header: {
-      title: "resume / portfolio",
       logotype: {
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
-        // link: "/assets/images/36593829.jpg"
       }
     },
     footer: {
@@ -32,28 +37,27 @@ export default {
       description: "JS trainnig samples",
       linkSite: "https://vibrant-poincare-3ab32c.netlify.app/",
       linkSource: "https://github.com/telesyk/training-js-cardio",
-      image: "/assets/images/screen_3.jpg"
+      image: "/assets/images/screen_3.jpg",
+      imageShow: false,
+      icon: "javascript",
     },
     {
       title: "react-todo-tracker-tutorial",
       description: "Tutorial React app",
       linkSite: "https://csb-kcop4.netlify.app/",
       linkSource: "https://github.com/telesyk/react-todo-tracker-tutorial",
-      image: "/assets/images/screen_1.jpg"
+      image: "/assets/images/screen_1.jpg",
+      imageShow: false,
+      icon: "react-js",
     },
     {
       title: "vue-todo-app",
       description: "Tutorial ToDo Vue app",
       linkSite: "https://priceless-noyce-203235.netlify.app/",
       linkSource: "https://github.com/telesyk/vue-todo-app",
-      image: "/assets/images/screen_2.jpg"
+      image: "/assets/images/screen_2.jpg",
+      imageShow: false,
+      icon: "vue-js",
     }
-    // {
-    //   title: "Test",
-    //   description: "Engineer",
-    //   linkSite: "https://test",
-    //   linkSource: "https://test",
-    //   image: "/assets/images/screen_1.png"
-    // }
   ]
 };
