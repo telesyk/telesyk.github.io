@@ -1,7 +1,13 @@
 export default {
+  site: {
+    name: "Oles Tk.",
+  },
+  pages: {
+    home: 'Home page',
+    experience: 'Experience page',
+  },
   page: {
     header: {
-      title: "Oles Tk.",
       logotype: {
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
