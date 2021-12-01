@@ -1,29 +1,78 @@
 :root {
+  /* Colors */
   --color-mustard: #F7D44B;
-  --color-mustard-dum: #CABE91;
+  --color-mustard-shade: #CABE91;
   --color-blue: #143d68;
-  --color-blue-light: #ccdadb;
+  --color-blue-light: #bed4dd;
+  --color-blue-dark: #111827;
+  --color-blue-shade: #3b5d82;
+  /* Default Light Theme */
+  --bg-default-color: var(--color-blue-light);
+  --bg-accent: var(--color-mustard);
+  --text-default-color: var(--color-blue-dark);
+  --text-accent: var(--color-blue);
+  --text-accent-shade: var(--color-blue-shade);
+  --button-accent: var(--color-blue);
+  --button-accent-text: var(--color-mustard-shade);
 }
 
 body {
   font-family: 'Lato', sans-serif;
 }
 
-#app .header,
-#app .footer {
-  color: var(--color-blue-light);
+/* Dark Theme */
+.dark {
+  --text-default-color: var(--color-blue-light);
+  --text-accent: var(--color-mustard);
+  --text-accent-shade: var(--color-mustard-shade);
+  --bg-default-color: var(--color-blue-dark);
+  --bg-accent: var(--color-blue);
+  --button-accent-text: var(--color-blue);
+  --button-accent: var(--color-mustard-shade);
 }
 
-.card {
-  background-color: var(--color-blue);
-  color: var(--color-mustard);
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  :root {
+    --text-default-color: var(--color-blue-light);
+    --text-accent: var(--color-mustard);
+    --text-accent-shade: var(--color-mustard-shade);
+    --bg-default-color: var(--color-blue-dark);
+    --bg-accent: var(--color-blue);
+    --button-accent-text: var(--color-blue);
+    --button-accent: var(--color-mustard-shade);
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
+  .light  {
+    --bg-default-color: var(--color-blue-light);
+    --bg-accent: var(--color-mustard);
+    --text-default-color: var(--color-blue-dark);
+    --text-accent: var(--color-blue);
+    --text-accent-shade: var(--color-blue-shade);
+    --button-accent: var(--color-blue);
+    --button-accent-text: var(--color-mustard-shade);
+  }
 }
 
-.card p,
-.card .text-black {
-  color: var(--color-mustard);
+.bg-default {
+  background-color: var(--bg-default-color);
+}
+.bg-accent {
+  background-color: var(--bg-accent);
 }
 
-.card .text-gray-500 {
-  color: var(--color-mustard-dum);
+.text-default {
+  color: var(--text-default-color);
+}
+.text-accent {
+  color: var(--text-accent);
+}
+.text-accent-shade {
+  color: var(--text-accent-shade);
+}
+
+.button-accent {
+  background-color: var(--button-accent);
+  color: var(--button-accent-text);
 }

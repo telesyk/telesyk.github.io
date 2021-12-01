@@ -1,6 +1,7 @@
 <template>
-<!-- In case of pages there should should be some router -->
-  <Page :config="page" :siteName="site.name" :pageName="pages.home">
+<!-- App component only through store deeper into app -->
+<!-- Prop 'pageName' should accept value depends on active page -->
+  <Page :pageConfig="page" :siteConfig="site" :pageName="pages.home">
     <template v-slot:main>
       <Home :cards="cards" />
     </template>

@@ -1,12 +1,15 @@
 <template>
   <div class="container flex flex-col min-h-screen mx-auto">
-    <Header :socialMedia="config.socials" :config="headerConfig" />
+    <Header
+      :socialMedia="pageConfig.socials"
+      :config="headerConfig"
+    />
 
     <main class="main py-5 flex-grow">
       <slot name="main"></slot>
     </main>
 
-    <Footer :config="config.footer" />
+    <Footer :config="pageConfig.footer" />
   </div>
 </template>
 
@@ -21,19 +24,26 @@ export default {
     Footer,
   },
   props: {
-    config: {
+    pageConfig: {
       type: Object,
       required: true,
     },
-    siteName: String,
+    siteConfig: {
+      type: Object,
+      required: true,
+    },
     pageName: String,
   },
   mounted() {
-    document.title = !this.pageName ? this.siteName : `${this.pageName} | ${this.siteName}`;
+    document.title = !this.pageName ? this.siteConfig.name : `${this.siteConfig.name} | ${this.pageName}`;
   },
   data() {
     return {
-      headerConfig: { ...this.config.header, title: this.siteName }
+      headerConfig: { 
+        ...this.pageConfig.header,
+        title: this.siteConfig.name,
+        theme: this.siteConfig.theme,
+      }
     }
   },
 };
