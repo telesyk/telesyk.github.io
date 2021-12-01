@@ -1,6 +1,10 @@
 export default {
   site: {
     name: "Oles Tk.",
+    theme: {
+      dark: "dark",
+      light: "light",
+    }
   },
   pages: {
     home: 'Home page',
@@ -9,12 +13,20 @@ export default {
   page: {
     header: {
       logotype: {
+        // link: '/assets/images/36593829.jpg',
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
       }
     },
     footer: {
-      copyright: "Copyrights 2021 lesyk"
+      copyright: "Copyrights 2021 lesyk",
+      thirdParty: {
+        text: 'Made with help:',
+        // links: [
+        //   'https://tailwindcss.com/',
+        //   'https://heroicons.com/'
+        // ]
+      }
     },
     socials: [
       {
