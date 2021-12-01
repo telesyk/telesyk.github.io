@@ -22,7 +22,7 @@
         <Icon 
           :glyph="config.icon" 
           strokeWidth="1" 
-          :className="'inline'" 
+          className="inline w-14 h-14 mt-1" 
         />
       </p>
       <p class="col-span-4 text-lg text-accent font-semibold">

@@ -12,8 +12,8 @@
   --text-default-color: var(--color-blue-dark);
   --text-accent: var(--color-blue);
   --text-accent-shade: var(--color-blue-shade);
-  --button-accent: var(--color-blue);
-  --button-accent-text: var(--color-mustard-shade);
+  --button-accent-bg: var(--color-blue);
+  --button-accent-text: var(--color-blue-light);
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   --bg-default-color: var(--color-blue-dark);
   --bg-accent: var(--color-blue);
   --button-accent-text: var(--color-blue);
-  --button-accent: var(--color-mustard-shade);
+  --button-accent-bg: var(--color-blue-light);
 }
 
 /* Styles for users who prefer dark mode at the OS level */
@@ -41,7 +41,7 @@ body {
     --bg-default-color: var(--color-blue-dark);
     --bg-accent: var(--color-blue);
     --button-accent-text: var(--color-blue);
-    --button-accent: var(--color-mustard-shade);
+    --button-accent-bg: var(--color-blue-light);
   }
   /* Override dark mode with light mode styles if the user decides to swap */
   .light  {
@@ -50,8 +50,8 @@ body {
     --text-default-color: var(--color-blue-dark);
     --text-accent: var(--color-blue);
     --text-accent-shade: var(--color-blue-shade);
-    --button-accent: var(--color-blue);
-    --button-accent-text: var(--color-mustard-shade);
+    --button-accent-bg: var(--color-blue);
+    --button-accent-text: var(--color-blue-light);
   }
 }
 
@@ -77,6 +77,6 @@ body {
   justify-content: center;
 }
 .button-accent {
-  background-color: var(--button-accent);
+  background-color: var(--button-accent-bg);
   color: var(--button-accent-text);
 }

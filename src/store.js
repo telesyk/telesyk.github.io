@@ -22,10 +22,10 @@ export default {
       copyright: "Copyrights 2021 lesyk",
       thirdParty: {
         text: 'Made with help:',
-        links: [
-          'https://tailwindcss.com/',
-          'https://heroicons.com/'
-        ]
+        // links: [
+        //   'https://tailwindcss.com/',
+        //   'https://heroicons.com/'
+        // ]
       }
     },
     socials: [

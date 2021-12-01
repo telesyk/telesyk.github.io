@@ -31,15 +31,3 @@ export default {
   },
 };
 </script>
-
-<style>
-:root {
-  --svg-icon-size: 22px;
-}
-
-.icon-svg svg {
-  height: var(--svg-icon-size);
-  width: var(--svg-icon-size);
-  /* transform: translateY(1px); */
-}
-</style>
