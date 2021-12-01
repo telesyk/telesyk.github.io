@@ -14,13 +14,14 @@
           <SocialLink class="p-3" :title="social.title" :url="social.link" />
         </li>
 
-        <li v-if="config.theme.dark">
+        <li v-if="colorTheme.dark">
           <button 
-            class="py-3 px-4 button-accent"
+            class="w-full md:w-auto flex py-3 px-4 rounded-md button button-accent"
             :title="'Switch to ' + switchTheme"
             @click.prevent="onSwitchTheme"
           >
-            {{ switchButtonName }}
+            <span class="hidden md:inline">{{ getSwithcButtonName() }}</span>
+            <Icon glyph="color-swatch"/>
           </button>
         </li>
       </ul>
@@ -31,40 +32,49 @@
 <script>
 import Image from "./Image";
 import SocialLink from "./SocialLink";
+import Icon from "./Icon";
 import { setCapitalize, isPrefersDarkSheme } from '@/helpers';
 
 export default {
+  components: {
+    Image,
+    SocialLink,
+    Icon,
+  },
   props: {
     socialMedia: Array,
     config: Object,
   },
-  components: {
-    Image,
-    SocialLink,
-  },
   data() {
     return {
-      switchTheme: isPrefersDarkSheme() ? this.config.theme.light : this.config.theme.dark,
-      switchButtonName: '',
+      switchTheme: '',
+      rootElementClassList: document.documentElement.classList,
+      colorTheme: this.config.theme,
     }
   },
-  mounted() {
-    this.switchButtonName = setCapitalize( this.switchTheme );
+  created() {
+    this.rootElementClassList.toggle( isPrefersDarkSheme() ? this.colorTheme.dark : this.colorTheme.light );
+    this.switchTheme = isPrefersDarkSheme() ? this.colorTheme.light : this.colorTheme.dark;
   },
   methods: {
+    getSwithcButtonName() {
+      return setCapitalize( this.switchTheme );
+    },
     onSwitchTheme() {
-      const isCurrentDark = isPrefersDarkSheme();
-      const htmlDoc = document.documentElement;
-      // const isLightClass = htmlDoc.classList.contains(this.config.theme.light);
+      const isLightClassName = this.rootElementClassList.contains(this.colorTheme.light);
+      const switchClassNames = () => {
+        this.rootElementClassList.toggle(this.colorTheme.light);
+        this.rootElementClassList.toggle(this.colorTheme.dark);
+      }
 
-      if (isCurrentDark) {
-        htmlDoc.classList.toggle(this.config.theme.light);
-        this.switchTheme = this.config.theme.dark;
-        // this.switchButtonName = setCapitalize( this.switchTheme );
+      if (!isLightClassName) {
+        this.switchTheme = this.colorTheme.dark;
+        switchClassNames();
+        this.getSwithcButtonName();
       } else {
-        htmlDoc.classList.toggle(this.config.theme.dark);
-        this.switchTheme = this.config.theme.light;
-        // this.switchButtonName = setCapitalize( this.switchTheme );
+        this.switchTheme = this.colorTheme.light;
+        switchClassNames();
+        this.getSwithcButtonName();
       }
     },
   },

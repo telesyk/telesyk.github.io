@@ -18,7 +18,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default {
-  name: "Page",
   components: {
     Header,
     Footer,
@@ -34,9 +33,6 @@ export default {
     },
     pageName: String,
   },
-  mounted() {
-    document.title = !this.pageName ? this.siteConfig.name : `${this.siteConfig.name} | ${this.pageName}`;
-  },
   data() {
     return {
       headerConfig: { 
@@ -45,6 +41,9 @@ export default {
         theme: this.siteConfig.theme,
       }
     }
+  },
+  mounted() {
+    document.title = !this.pageName ? this.siteConfig.name : `${this.siteConfig.name} | ${this.pageName}`;
   },
 };
 </script>

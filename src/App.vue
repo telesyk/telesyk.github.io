@@ -14,7 +14,6 @@ import Home from "@/page/Home";
 import store from "@/store.js";
 
 export default {
-  name: "App",
   components: {
     Page,
     Home,

@@ -8,11 +8,11 @@
 import Card from "@/components/Card";
 
 export default {
-  props: {
-    cards: Array,
-  },
   components: {
     Card,
+  },
+  props: {
+    cards: Array,
   },
 };
 </script>

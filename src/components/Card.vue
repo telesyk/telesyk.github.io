@@ -30,7 +30,7 @@
           :href="config.linkSite"
           :title="`Link to site ${config.title}`"
           target="_blank"
-          class="flex"
+          class="flex items-center"
         >
           <span class="capitalize">{{ config.title }}</span>
           <Icon glyph="external-link" />
@@ -42,7 +42,7 @@
           :href="config.linkSource"
           :title="`Link to source ${config.title}`"
           target="_blank"
-          class="flex"
+          class="flex items-center"
         >
           <span>{{ config.description }}</span>
           <Icon glyph="code" />

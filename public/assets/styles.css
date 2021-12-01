@@ -72,6 +72,10 @@ body {
   color: var(--text-accent-shade);
 }
 
+.button {
+  text-align: center;
+  justify-content: center;
+}
 .button-accent {
   background-color: var(--button-accent);
   color: var(--button-accent-text);

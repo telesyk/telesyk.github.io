@@ -34,12 +34,12 @@ export default {
 
 <style>
 :root {
-  --svg-icon-size: 24px;
+  --svg-icon-size: 22px;
 }
 
 .icon-svg svg {
   height: var(--svg-icon-size);
   width: var(--svg-icon-size);
-  transform: translateY(2px);
+  /* transform: translateY(1px); */
 }
 </style>
