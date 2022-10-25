@@ -19,7 +19,7 @@ export default {
       }
     },
     footer: {
-      copyright: "Copyrights 2021 lesyk",
+      copyright: "Copyrights 2022 lesyk",
       thirdParty: {
         text: 'Made with help:',
         // links: [
@@ -44,6 +44,15 @@ export default {
     ]
   },
   cards: [
+    {
+      title: "react-markdown-editor-training-app",
+      description: "Simple notes webapp",
+      linkSite: "https://dancing-pie-93cc24.netlify.app/",
+      linkSource: "https://github.com/telesyk/react-markdown-editor-training-app",
+      image: "/assets/images/screen_3.jpg",
+      imageShow: false,
+      icon: "react-js",
+    },
     {
       title: "training-js-cardio",
       description: "JS trainnig samples",
