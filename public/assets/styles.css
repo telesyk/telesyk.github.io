@@ -14,6 +14,9 @@
   --text-accent-shade: var(--color-blue-shade);
   --button-accent-bg: var(--color-blue);
   --button-accent-text: var(--color-blue-light);
+  /* Sizes */
+  --cart-list-gap: 1.5rem;
+  --cart-width: 100%;
 }
 
 body {
@@ -79,4 +82,19 @@ body {
 .button-accent {
   background-color: var(--button-accent-bg);
   color: var(--button-accent-text);
+}
+
+/* Elements */
+.cart-list {
+  gap: var(--cart-list-gap);
+}
+
+.cart {
+  flex: 0 0 var(--cart-width);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --cart-width: calc(50% - calc(var(--cart-list-gap) / 2));
+  }
 }

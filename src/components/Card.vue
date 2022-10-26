@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card w-full max-w-md py-6 px-6 bg-accent rounded-xl shadow-md space-y-2"
+    class="cart max-w-md py-6 px-6 bg-accent rounded-xl shadow-md space-y-2"
   >
     <a
       v-if="config.imageShow"
@@ -16,7 +16,7 @@
       />
     </a>
     <div class="text-left grid grid-rows-1 grid-cols-5">
-      <p
+      <div
         class="icon-tech text-accent row-span-2 flex justify-center items-center"
       >
         <Icon 
@@ -24,8 +24,8 @@
           strokeWidth="1" 
           className="inline w-14 h-14 mt-1" 
         />
-      </p>
-      <p class="col-span-4 text-lg text-accent font-semibold">
+      </div>
+      <div class="col-span-4 text-lg text-accent font-semibold">
         <a
           :href="config.linkSite"
           :title="`Link to site ${config.title}`"
@@ -33,11 +33,10 @@
           class="flex items-center"
         >
           <span class="capitalize">{{ config.title }}</span>
-          <Icon glyph="external-link" />
+          <Icon glyph="external-link" className="ml-1 inline h-5 w-5 flex-shrink-0" />
         </a>
-      </p>
-
-      <p class="col-span-4 text-accent-shade font-medium">
+      </div>
+      <div class="col-span-4 text-accent-shade font-medium">
         <a
           :href="config.linkSource"
           :title="`Link to source ${config.title}`"
@@ -47,7 +46,7 @@
           <span>{{ config.description }}</span>
           <Icon glyph="code" />
         </a>
-      </p>
+      </div>
     </div>
   </div>
 </template>
