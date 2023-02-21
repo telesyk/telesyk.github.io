@@ -77,10 +77,12 @@ export default {
         this.switchTheme = this.colorTheme.dark;
         switchClassNames();
         this.getSwithcButtonName();
+        localStorage.setItem('colorSheme', 'light');
       } else {
         this.switchTheme = this.colorTheme.light;
         switchClassNames();
         this.getSwithcButtonName();
+        localStorage.setItem('colorSheme', 'dark');
       }
     },
   },
