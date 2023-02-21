@@ -1,18 +1,3 @@
-<template>
-  <div class="container flex flex-col min-h-screen mx-auto">
-    <Header
-      :socialMedia="pageConfig.socials"
-      :config="headerConfig"
-    />
-
-    <main class="main py-5 flex-grow">
-      <slot name="main"></slot>
-    </main>
-
-    <Footer :config="pageConfig.footer" />
-  </div>
-</template>
-
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -47,3 +32,18 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="container flex flex-col min-h-screen mx-auto">
+    <Header
+      :socialMedia="pageConfig.socials"
+      :config="headerConfig"
+    />
+
+    <main class="main py-5 flex-grow">
+      <slot name="main"></slot>
+    </main>
+
+    <Footer :config="pageConfig.footer" />
+  </div>
+</template>
