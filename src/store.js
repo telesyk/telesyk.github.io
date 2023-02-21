@@ -13,19 +13,24 @@ export default {
   page: {
     header: {
       logotype: {
-        // link: '/assets/images/36593829.jpg',
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
       }
     },
     footer: {
-      copyright: "Copyrights 2022 lesyk",
+      copyright: "lesyk | Copyrights 2022 -",
+      links: [
+        {
+          name: 'TailwindCSS',
+          url: 'https://tailwindcss.com/',
+        },
+        {
+          name: 'VueJS',
+          url: 'https://vuejs.org/',
+        }
+      ],
       thirdParty: {
         text: 'Made with help:',
-        // links: [
-        //   'https://tailwindcss.com/',
-        //   'https://heroicons.com/'
-        // ]
       }
     },
     socials: [
@@ -38,7 +43,7 @@ export default {
         title: "GitHub"
       },
       {
-        link: "mailto:tkachuk.oles@gmail.com",
+        link: "mailto:oles.freelance@gmail.com",
         title: "Email"
       }
     ]

@@ -23,7 +23,8 @@ export default {
       site: { ...store.site },
       pages: { ...store.pages },
       page: { ...store.page },
-      cards: [ ...store.cards ],
+      // cards: [ ...store.cards ],
+      cards: [],
     };
   },
 };
