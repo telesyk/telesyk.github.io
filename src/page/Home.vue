@@ -6,22 +6,38 @@ export default {
     Card,
   },
   props: {
-    cards: Array,
+    fetchedData: Array || null,
+    isError: Boolean || null,
+  },
+  data() {
+    return {
+      fetchedRepos: [],
+      isDataLoading: false,
+    }
+  },
+  beforeUpdate() {
+    this.fetchedRepos = this.fetchedData.map(repo => repo);
   },
 };
 </script>
 
 <template>
   <div 
-    class="cart-list max-w-screen-md mx-auto flex flex-wrap justify-center p-y-6"
-    v-if="cards.length"
+    class="cart-list max-w-screen-md mx-auto flex flex-wrap justify-center py-6"
+    v-if="fetchedRepos && fetchedRepos.length"
   >
-    <Card v-for="card in cards" :key="card.title" :config="card" />
+    <Card v-for="repo in fetchedRepos" :key="repo.id" :config="repo" />
   </div>
-  <div 
-    v-else
-    class="max-w-screen-md mx-auto p-y-6"
+  <div
+    v-if="isDataLoading"
+    class="max-w-screen-md mx-auto py-6"
   >
-    <p>No GitHub projects...</p>
+    <p>Data is loading...</p>
+  </div>
+  <div
+    v-if="isError"
+    class="max-w-screen-md mx-auto py-6"
+  >
+    <p>Upss... Got an error.</p>
   </div>
 </template>
