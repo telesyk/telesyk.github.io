@@ -15,7 +15,8 @@ git commit -m "[DEPLOY] New build"
 
 # if you are deploying to https://<USERNAME>.github.io
 git push -f git@github.com:telesyk/telesyk.github.io.git main:gh-pages
-
+git push origin
+git checkout main
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
 
