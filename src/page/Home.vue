@@ -12,11 +12,15 @@ export default {
   data() {
     return {
       fetchedRepos: [],
-      isDataLoading: false,
+      isDataLoading: null,
     }
+  },
+  created() {
+    this.isDataLoading = true;
   },
   beforeUpdate() {
     this.fetchedRepos = this.fetchedData.map(repo => repo);
+    this.isDataLoading = false;
   },
 };
 </script>

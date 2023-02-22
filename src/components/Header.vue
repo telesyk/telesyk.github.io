@@ -53,24 +53,24 @@ export default {
 </script>
 
 <template>
-  <header class="header flex py-4">
-    <div class="flex flex-auto justify-between items-center">
-      <figure v-if="config.logotype.link" :class="config.logotype.className">
-        <Image :title="config.logotype.title" :link="config.logotype.link" />
+  <header class="header sticky left-0 top-0 backdrop-filter backdrop-blur">
+    <div class="container mx-auto py-4 px-4 md:px-0 md:py-8 flex flex-auto justify-between items-center">
+      <figure v-if="config.logotypeUrl" :class="config.logotype.className">
+        <Image :title="config.logotype.title" :link="config.logotypeUrl" />
       </figure>
 
-      <div class="flex">
+      <div class="flex" :class="config.logotypeUrl ? 'flex-1 ml-2' : ''">
         <h1 class="text-2xl capitalize">{{ config.title }}</h1>
       </div>
 
-      <ul class="text-right md:text-center md:flex md:justify-end md:items-center md:gap-x-4">
-        <li v-for="social in socialMedia" :key="social.title">
-          <SocialLink class="p-3" :title="social.title" :url="social.link" />
+      <ul class="text-right md:text-center md:flex md:justify-end md:items-center md:gap-4">
+        <li v-for="social in socialMedia" :key="social.title" class="block">
+          <SocialLink class="inline-block py-1 md:p-2" :title="social.title" :url="social.link" />
         </li>
 
         <li 
           v-if="colorTheme.dark"
-          class="pr-3 md:pr-0"
+          class="block"
         >
           <button 
             class="inline-flex md:flex px-4 rounded-md button button-accent text-xs p-2"

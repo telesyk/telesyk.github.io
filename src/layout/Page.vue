@@ -8,7 +8,7 @@ export default {
     Footer,
   },
   props: {
-    pageConfig: {
+    sectionsConfig: {
       type: Object,
       required: true,
     },
@@ -20,30 +20,39 @@ export default {
   },
   data() {
     return {
-      headerConfig: { 
-        ...this.pageConfig.header,
+      headerConfig: {
+        ...this.sectionsConfig.header,
         title: this.siteConfig.name,
         theme: this.siteConfig.theme,
-      }
+        logotypeUrl: null,
+      },
     }
   },
   mounted() {
     document.title = !this.pageName ? this.siteConfig.name : `${this.siteConfig.name} | ${this.pageName}`;
   },
+  beforeUpdate() {
+    this.headerConfig = {
+      ...this.headerConfig,
+      logotypeUrl: this.sectionsConfig.logotypeUrl,
+    }
+  },
 };
 </script>
 
 <template>
-  <div class="container flex flex-col min-h-screen mx-auto">
+  <div class="flex flex-col min-h-screen">
     <Header
-      :socialMedia="pageConfig.socials"
+      :socialMedia="sectionsConfig.socials"
       :config="headerConfig"
     />
 
-    <main class="main py-5 flex-grow">
-      <slot name="main"></slot>
+    <main class="main py-4 flex-grow">
+      <div class="container mx-auto px-4 md:px-0">
+        <slot name="main"></slot>
+      </div>
     </main>
 
-    <Footer :config="pageConfig.footer" />
+    <Footer :config="sectionsConfig.footer" />
   </div>
 </template>
