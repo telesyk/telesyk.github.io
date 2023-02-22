@@ -3,20 +3,15 @@
 # abort on errors
 set -e
 
+git fetch origin
+git checkout gh-pages
+git merge -X theirs main --no-commit
+
 # build
 yarn run build
 
-# navigate into the build output directory
-cd docs
-# cp -v -R * ../docs
-# zip -r site.zip build
-
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-git init
 git add -A
-git commit -m 'deploy'
+git commit -m "[DEPLOY] New build"
 
 # if you are deploying to https://<USERNAME>.github.io
 git push -f git@github.com:telesyk/telesyk.github.io.git main:gh-pages
@@ -24,4 +19,3 @@ git push -f git@github.com:telesyk/telesyk.github.io.git main:gh-pages
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
 
-cd -
