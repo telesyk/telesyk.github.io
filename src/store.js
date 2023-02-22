@@ -13,19 +13,24 @@ export default {
   page: {
     header: {
       logotype: {
-        // link: '/assets/images/36593829.jpg',
         title: "VectorStock.com/36593829",
         className: "h-24 w-24 rounded overflow-hidden bg-white"
       }
     },
     footer: {
-      copyright: "Copyrights 2022 lesyk",
+      copyright: "lesyk | Copyrights 2022 -",
+      links: [
+        {
+          name: 'TailwindCSS',
+          url: 'https://tailwindcss.com/',
+        },
+        {
+          name: 'VueJS',
+          url: 'https://vuejs.org/',
+        }
+      ],
       thirdParty: {
-        text: 'Made with help:',
-        // links: [
-        //   'https://tailwindcss.com/',
-        //   'https://heroicons.com/'
-        // ]
+        text: 'Made with ❤️ &:',
       }
     },
     socials: [
@@ -38,47 +43,9 @@ export default {
         title: "GitHub"
       },
       {
-        link: "mailto:tkachuk.oles@gmail.com",
+        link: "mailto:oles.freelance@gmail.com",
         title: "Email"
       }
     ]
   },
-  cards: [
-    {
-      title: "react-markdown-editor-training-app",
-      description: "Simple notes webapp",
-      linkSite: "https://dancing-pie-93cc24.netlify.app/",
-      linkSource: "https://github.com/telesyk/react-markdown-editor-training-app",
-      image: "/assets/images/screen_3.jpg",
-      imageShow: false,
-      icon: "react-js",
-    },
-    {
-      title: "training-js-cardio",
-      description: "JS trainnig samples",
-      linkSite: "https://vibrant-poincare-3ab32c.netlify.app/",
-      linkSource: "https://github.com/telesyk/training-js-cardio",
-      image: "/assets/images/screen_3.jpg",
-      imageShow: false,
-      icon: "javascript",
-    },
-    {
-      title: "react-todo-tracker-tutorial",
-      description: "Tutorial React app",
-      linkSite: "https://csb-kcop4.netlify.app/",
-      linkSource: "https://github.com/telesyk/react-todo-tracker-tutorial",
-      image: "/assets/images/screen_1.jpg",
-      imageShow: false,
-      icon: "react-js",
-    },
-    {
-      title: "vue-todo-app",
-      description: "Tutorial ToDo Vue app",
-      linkSite: "https://priceless-noyce-203235.netlify.app/",
-      linkSource: "https://github.com/telesyk/vue-todo-app",
-      image: "/assets/images/screen_2.jpg",
-      imageShow: false,
-      icon: "vue-js",
-    }
-  ]
 };

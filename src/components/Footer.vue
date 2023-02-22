@@ -1,13 +1,15 @@
 <template>
   <footer class="footer py-4">
     <div class="text-center">
-      <p class="my-3" v-if="config.thirdParty.links">
-        {{ config.thirdParty.text }}
+      <p class="my-3">{{ config.copyright }} {{ currentYear }}</p>
+      <p class="my-3" v-if="config.links">
+        <small>{{ config.thirdParty.text }}</small>
         <ul>
-          <li v-for="(link, index) in config.thirdParty.links" :key="index">{{ link }}</li>
+          <li v-for="(link, index) in config.links" :key="index">
+            <a :href="link.url" target="_blank" class="underline">{{ link.name }}</a>
+          </li>
         </ul>
       </p>
-      <p class="my-3">{{ config.copyright }}</p>
     </div>
   </footer>
 </template>
@@ -20,5 +22,10 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    }
+  }
 };
 </script>

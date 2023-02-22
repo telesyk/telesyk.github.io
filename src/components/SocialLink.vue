@@ -1,7 +1,3 @@
-<template>
-  <a :href="url" target="_blank" rel="noopener">{{ title }}</a>
-</template>
-
 <script>
 export default {
   props: {
@@ -10,3 +6,7 @@ export default {
   },
 };
 </script>
+
+<template>
+  <a :href="url" target="_blank" rel="noopener">{{ title }}</a>
+</template>

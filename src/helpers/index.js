@@ -3,5 +3,5 @@ import isPrefersDarkSheme from "./is-prefers-dark-sheme";
 
 export {
   setCapitalize,
-  isPrefersDarkSheme
+  isPrefersDarkSheme,
 };

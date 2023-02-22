@@ -9,8 +9,8 @@ const icons = {
   "external-link": externalLink,
   code: code,
   javascript: javascript,
-  "react-js": reactjs,
-  "vue-js": vuejs,
+  react: reactjs,
+  vue: vuejs,
   "color-swatch": colorSwatch,
 };
 

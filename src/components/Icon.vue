@@ -3,6 +3,7 @@
     v-html="iconComponent(strokeWidth)"
     class="icon-svg"
     :class="className"
+    :strokeWidth="strokeWidth"
   ></span>
 </template>
 
@@ -25,8 +26,9 @@ export default {
     },
   },
   data() {
+    const glyphName = this.glyph.toLowerCase();
     return {
-      iconComponent: icons[this.glyph],
+      iconComponent: icons[glyphName] ? icons[glyphName] : icons['code'],
     };
   },
 };
