@@ -14,7 +14,7 @@ export default {
     header: {
       logotype: {
         title: "VectorStock.com/36593829",
-        className: "h-24 w-24 rounded overflow-hidden bg-white"
+        className: "h-12 w-12 rounded-full overflow-hidden border-2"
       }
     },
     footer: {

@@ -95,6 +95,7 @@ body {
 
 @media screen and (min-width: 768px) {
   :root {
+    --card-list-gap: 2rem;
     --cart-width: calc(50% - calc(var(--cart-list-gap) / 2));
   }
 }

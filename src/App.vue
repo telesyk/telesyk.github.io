@@ -12,7 +12,7 @@ export default {
     return {
       site: { ...store.site },
       pages: { ...store.pages },
-      page: { ...store.page },
+      sections: { ...store.page },
       fetchedData: null,
       fetchError: null,
     };
@@ -24,9 +24,15 @@ export default {
     async getData() {
       try {
         const res = await fetch('https://api.github.com/users/telesyk/repos');
-        const data = await res.json();
-
+        
         if (!res.ok && res.status >= 400) throw new Error(`${res.status}: ${res.statusText}`);
+        
+        const data = await res.json();
+        
+        this.sections = {
+          ...this.sections,
+          logotypeUrl: data[0].owner.avatar_url,
+        }
         
         this.fetchedData = await data.map(repo => {
           return {
@@ -50,7 +56,7 @@ export default {
 </script>
 
 <template>
-  <Page :pageConfig="page" :siteConfig="site" :pageName="pages.home">
+  <Page :sectionsConfig="sections" :siteConfig="site" :pageName="pages.home">
     <template v-slot:main>
       <Home :fetchedData="fetchedData" :isError="fetchError" />
     </template>
