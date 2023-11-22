@@ -27,7 +27,7 @@ export default {
 
 <template>
   <div 
-    class="cart-list max-w-screen-md mx-auto flex flex-wrap justify-center py-6"
+    class="cart-list flex flex-wrap justify-center py-6"
     v-if="fetchedRepos && fetchedRepos.length"
   >
     <Card v-for="repo in fetchedRepos" :key="repo.id" :config="repo" />

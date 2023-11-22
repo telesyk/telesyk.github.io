@@ -16,18 +16,18 @@ export default {
   },
   data() {
     return {
-      switchTheme: '',
+      switchThemeTitle: '',
       rootElementClassList: document.documentElement.classList,
       colorTheme: this.config.theme,
     }
   },
   created() {
     this.rootElementClassList.toggle( isPrefersDarkSheme() ? this.colorTheme.dark : this.colorTheme.light );
-    this.switchTheme = isPrefersDarkSheme() ? this.colorTheme.light : this.colorTheme.dark;
+    this.switchThemeTitle = isPrefersDarkSheme() ? this.colorTheme.light : this.colorTheme.dark;
   },
   methods: {
     getSwithcButtonName() {
-      return setCapitalize( this.switchTheme );
+      return setCapitalize( this.switchThemeTitle );
     },
     onSwitchTheme() {
       const isLightClassName = this.rootElementClassList.contains(this.colorTheme.light);
@@ -37,12 +37,12 @@ export default {
       }
 
       if (!isLightClassName) {
-        this.switchTheme = this.colorTheme.dark;
+        this.switchThemeTitle = this.colorTheme.dark;
         switchClassNames();
         this.getSwithcButtonName();
         localStorage.setItem('colorSheme', 'light');
       } else {
-        this.switchTheme = this.colorTheme.light;
+        this.switchThemeTitle = this.colorTheme.light;
         switchClassNames();
         this.getSwithcButtonName();
         localStorage.setItem('colorSheme', 'dark');
@@ -54,7 +54,7 @@ export default {
 
 <template>
   <header class="header sticky left-0 top-0 backdrop-filter backdrop-blur">
-    <div class="container mx-auto py-4 px-4 md:px-0 md:py-8 flex flex-auto justify-between items-center">
+    <div class="container xl:max-w-screen-xl mx-auto py-4 px-4 lg:px-0 md:py-8 flex flex-auto justify-between items-center">
       <figure v-if="config.logotypeUrl" :class="config.logotype.className">
         <Image :title="config.logotype.title" :link="config.logotypeUrl" />
       </figure>
@@ -63,24 +63,29 @@ export default {
         <h1 class="text-2xl capitalize">{{ config.title }}</h1>
       </div>
 
-      <ul class="text-right md:text-center md:flex md:justify-end md:items-center md:gap-4">
+      <ul class="flex justify-end items-center gap-4 text-center">
         <li v-for="social in socialMedia" :key="social.title" class="block">
-          <SocialLink class="inline-block py-1 md:p-2" :title="social.title" :url="social.link" />
+          <SocialLink class="inline-block py-1 md:p-2" :icon="social.title" :url="social.link" />
         </li>
 
-        <li 
-          v-if="colorTheme.dark"
+        <li
           class="block"
         >
           <button 
-            class="inline-flex md:flex px-4 rounded-md button button-accent text-xs p-2"
-            :title="'Switch to ' + switchTheme"
+            class="py-2 inline-flex items-center md:flex transition-all"
+            :title="'Switch to ' + switchThemeTitle"
             @click.prevent="onSwitchTheme"
           >
             <span class="hidden md:inline">{{ getSwithcButtonName() }}</span>
             <Icon 
-              glyph="color-swatch"
-              className="ml-1 inline h-4 w-4"
+              v-if="switchThemeTitle === 'dark'"
+              glyph="moon"
+              className="inline ml-1 h-8 w-8 p-2 rounded-full button button-accent"
+            />
+            <Icon 
+              v-else
+              glyph="sun"
+              className="inline ml-1 h-8 w-8 p-2 rounded-full button button-accent"
             />
           </button>
         </li>

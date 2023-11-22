@@ -48,7 +48,7 @@ export default {
     />
 
     <main class="main py-4 flex-grow">
-      <div class="container mx-auto px-4 md:px-0">
+      <div class="container xl:max-w-screen-xl mx-auto px-4 lg:px-0">
         <slot name="main"></slot>
       </div>
     </main>

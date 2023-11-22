@@ -16,7 +16,7 @@
 
 <template>
   <div
-    class="cart max-w-md py-6 px-6 bg-accent rounded-xl shadow-md space-y-2 hover:shadow-lg"
+    class="cart p-3 md:p-6 bg-accent rounded-xl shadow-md space-y-2 hover:shadow-lg"
   >
     <a
       v-if="config.imageShow && config.siteUrl"
@@ -31,14 +31,14 @@
         :alt="config.title"
       />
     </a>
-    <div class="text-left grid grid-rows-1 grid-cols-5 gap-2">
+    <div class="text-left h-full grid grid-rows-1 grid-cols-5 gap-2">
       <div
-        class="icon-tech text-accent row-span-2 flex justify-center"
+        class="icon-tech text-accent row-span-2 flex items-center"
       >
         <Icon 
           :glyph="config.tech"
           :strokeWidth="1" 
-          className="inline w-14 h-14 mt-1" 
+          className="inline w-12 h-12" 
         />
       </div>
       <div class="col-span-4 text-lg text-accent font-semibold">
@@ -58,14 +58,15 @@
           <span class="capitalize">{{ config.title }}</span>
       </span>
       </div>
-      <div class="max-h-8 overflow-hidden col-span-4 text-accent-shade font-medium">
+      <div class="overflow-hidden col-span-4 text-accent-shade font-medium">
         <a
           :href="config.sourceUrl"
           :title="`Link to source ${config.title}`"
           target="_blank"
-          class="flex items-center"
+          class="flex items-center gap-1"
         >
-          <small>{{ config.description ? config.description : config.title }}</small>
+          <Icon glyph="git" className="w-6 h-6" />
+          <small class="flex-1">{{ config.description ? config.description : config.title }}</small>
         </a>
       </div>
     </div>
