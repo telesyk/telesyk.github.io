@@ -16,6 +16,7 @@
   --button-accent-text: var(--color-blue-light);
   /* Sizes */
   --cart-list-gap: 1.5rem;
+  --cart-list-width: 400px;
   --cart-width: 100%;
 }
 
@@ -87,6 +88,8 @@ body {
 /* Elements */
 .cart-list {
   gap: var(--cart-list-gap);
+  max-width: var(--cart-list-width);
+  margin: auto;
 }
 
 .cart {
@@ -95,7 +98,15 @@ body {
 
 @media screen and (min-width: 768px) {
   :root {
-    --card-list-gap: 2rem;
+    --cart-list-gap: 2rem;
+    --cart-list-width: initial;
     --cart-width: calc(50% - calc(var(--cart-list-gap) / 2));
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --cart-list-gap: 2.6rem;
+    --cart-width: calc(32.25% - calc(var(--cart-list-gap) / 3));
   }
 }

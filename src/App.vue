@@ -28,6 +28,8 @@ export default {
         if (!res.ok && res.status >= 400) throw new Error(`${res.status}: ${res.statusText}`);
         
         const data = await res.json();
+
+        console.debug(data)
         
         this.sections = {
           ...this.sections,
