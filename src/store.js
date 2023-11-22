@@ -18,7 +18,7 @@ export default {
       }
     },
     footer: {
-      copyright: "Copyrights 2020 -",
+      copyright: "Copyrights 2021 -",
       links: [
         {
           name: 'TailwindCSS',
