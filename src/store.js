@@ -18,7 +18,7 @@ export default {
       }
     },
     footer: {
-      copyright: "lesyk | Copyrights 2022 -",
+      copyright: "Copyrights 2022 -",
       links: [
         {
           name: 'TailwindCSS',
@@ -43,8 +43,8 @@ export default {
         title: "GitHub"
       },
       {
-        link: "mailto:oles.freelance@gmail.com",
-        title: "Email"
+        link: "https://upwork.com/freelancers/olestkachuk",
+        title: "Upwork"
       }
     ]
   },
