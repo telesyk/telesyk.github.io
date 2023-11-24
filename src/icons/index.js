@@ -10,6 +10,8 @@ import git from "./git";
 import github from "./github";
 import linkedin from "./linkedin";
 import upwork from "./upwork";
+import typescript from "./typescript";
+import html from "./html";
 
 const icons = {
   "external-link": externalLink,
@@ -24,6 +26,8 @@ const icons = {
   github: github,
   linkedin: linkedin,
   upwork: upwork,
+  typescript: typescript,
+  html: html,
 };
 
 export default icons;
