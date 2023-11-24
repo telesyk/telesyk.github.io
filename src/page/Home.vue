@@ -1,5 +1,6 @@
 <script>
 import Card from "@/components/Card";
+import { getFilteredByDateData } from "../helpers";
 
 export default {
   components: {
@@ -19,7 +20,7 @@ export default {
     this.isDataLoading = true;
   },
   beforeUpdate() {
-    this.fetchedRepos = this.fetchedData.map(repo => repo);
+    this.fetchedRepos = getFilteredByDateData(this.fetchedData.map(repo => repo));
     this.isDataLoading = false;
   },
 };

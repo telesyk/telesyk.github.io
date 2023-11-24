@@ -35,15 +35,18 @@ export default {
         }
         
         this.fetchedData = await data.map(repo => {
-          return {
+          const newObj = {
             id: repo.id,
             title: repo.name,
-            created: repo.created_at,
+            date: new Date(repo.created_at).getTime(),
             description: repo.description,
             siteUrl: repo.homepage,
             sourceUrl: repo.html_url,
             tech: repo.language,
           }
+          // console.debug(newObj)
+
+          return newObj
         });
        
       } catch(error) {
